@@ -67,9 +67,10 @@
         </div>
 
         <!-- Job card Section -->
-         <!-- 1st -->
+        <!-- 1st -->
         <div id="jobs-container" class="mb-10 grid grid-cols-1 gap-5">
-            <div class="job-card lg:w-[1110px] md:w-[1110px] sm:w-[750px] h-[280px]  relative p-2.5 bg-white rounded-lg border border-amber-200">
+            <div
+                class="job-card lg:w-[1110px] md:w-[1110px] sm:w-[750px] h-[280px]  relative p-2.5 bg-white rounded-lg border border-amber-200">
 
                 <button class="trash-btn absolute right-3 top-3"><i class="fa-regular fa-trash-can "></i></button>
 
@@ -161,18 +162,21 @@
         </div>
 
         <!-- No jobs page -->
-        <div id="no-jobs-page"
-            class="w-full max-w-[1160px] mx-auto h-[400px] mb-10 flex flex-col justify-center items-center rounded-lg shadow-sm bg-white hidden">
-            <img src="./images/jobs.png" alt="" height="100px" width="100px">
+        <div id="no-jobs-page" class="w-full max-w-[1160px] mx-auto mb-10 grid grid-cols-1 gap-5">
 
-            <h1 class="text-2xl font-semibold leading-5 text-[#002C5C] mt-5">No jobs available</h1>
+            <div id="empty-message"
+                class="flex flex-col justify-center items-center py-20 bg-white rounded-lg shadow-sm w-full">
+                <img src="/images/jobs.png" alt="" height="100px" width="100px">
+                <h1 class="text-2xl font-semibold leading-5 text-[#002C5C] mt-5">No jobs available</h1>
+                <h5 class="text-[16px] leading-5 text-[#64748B] mt-5">Check back soon for new job opportunities</h5>
+            </div>
 
-            <h5 class="text-[16px] leading-5 text-[#64748B] mt-5">Check back soon for new job opportunities</h5>
         </div>
 
     </section>
 
-    <script src="./script/event_handle.js"></script>
+    <!-- <script src="./script/event_handle.js"></script> -->
+    <script src="./script/"></script>
 </body>
 
 </html>
