@@ -3,8 +3,8 @@ updateTotalCount();
 
 //handle job, interview and rejected page with button
 function showItem(id, event) {
-    const jobPageElement = document.getElementById("all-jobs");
-    const noJobPageElement = document.getElementById("no-jobs-page");
+    const jobPageElement = document.getElementById('jobs-container');
+    const noJobPageElement = document.getElementById('no-jobs-page');
 
     //hide all
     jobPageElement.classList.add("hidden");
@@ -61,7 +61,7 @@ function rejectedCount() {
     if(display) display.innerText = count;
 }
 
-
+//event listener
 document.addEventListener('click', (e) => {
     // Delete Logic
     if (e.target.closest('.trash-btn')) {

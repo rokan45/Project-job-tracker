@@ -58,10 +58,10 @@
             <button id="all-btn" onclick="showItem('all-jobs',event)"
                 class="page-btn btn btn-primary text-white w-20 h-8 shadow-md bg-blue-600 ">All</button>
 
-            <button id="Interview-btn" onclick="showItem('no-jobs-page',event)"
+            <button id="Interview-btn" onclick="showItem('interview',event)"
                 class="page-btn btn btn-primary w-20 h-8 text-[#64748B] shadow-md bg-white">Interview</button>
 
-            <button id="reject-btn" onclick="showItem('no-jobs-page',event)"
+            <button id="reject-btn" onclick="showItem('rejected',event)"
                 class="page-btn btn btn-primary w-20 h-8 text-[#64748B]  shadow-md bg-white">Rejected</button>
 
         </div>
@@ -70,7 +70,7 @@
         <!-- 1st -->
         <div id="jobs-container" class="mb-10 grid grid-cols-1 gap-5">
             <div
-                class="job-card lg:w-[1110px] md:w-[1110px] sm:w-[750px] h-[280px]  relative p-2.5 bg-white rounded-lg border border-amber-200">
+                class="job-card lg:w-[1110px] md:w-[1110px] sm:w-[750px] h-[280px]  relative p-2.5 bg-white rounded-lg border border-amber-200 " data-status="not-applied">
 
                 <button class="trash-btn absolute right-3 top-3"><i class="fa-regular fa-trash-can "></i></button>
 
@@ -94,14 +94,10 @@
                     <button class="interview-btn btn btn-accent w-[100px] h-9">INTERVIEW</button>
                     <button class="rejected-btn btn btn-secondary w-[100px] h-9">REJECTED</button>
                 </div>
-
-
             </div>
-        </div>
-        <!-- 2nd -->
-        <div id="all-jobs" class="mb-10 grid grid-cols-1 gap-5">
-            <div id="job-description"
-                class="job-card lg:w-[1110px] md:w-[1110px] sm:w-[750px] h-[280px]  relative p-2.5 bg-white rounded-lg border border-amber-200">
+
+             <div
+                class="job-card lg:w-[1110px] md:w-[1110px] sm:w-[750px] h-[280px]  relative p-2.5 bg-white rounded-lg border border-amber-200 " data-status="not-applied">
 
                 <button class="trash-btn absolute right-3 top-3"><i class="fa-regular fa-trash-can "></i></button>
 
@@ -115,24 +111,20 @@
                     </ul>
                 </div>
 
-                <button class="btn mt-5 w-[120px] h-10 bg-[#EEF4FF]">Not Applied</button>
+                <button class="status-btn btn mt-5 w-[120px] h-10 bg-[#EEF4FF]">Not Applied</button>
                 <p class=" mt-2 text-[14px] text-[#323B49] text-wrap">Build cross-platform mobile applications using
                     React Native.
                     Work on products used by millions of users worldwide.</p>
 
                 <!-- two Buttons -->
                 <div class=" mt-5 flex gap-5 items-center">
-                    <button class="btn btn-outline btn-secondary w-[100px] h-9">INTERVIEW</button>
-                    <button class="btn btn-outline btn-accent w-[100px] h-9">REJECTED</button>
+                    <button class="interview-btn btn btn-accent w-[100px] h-9">INTERVIEW</button>
+                    <button class="rejected-btn btn btn-secondary w-[100px] h-9">REJECTED</button>
                 </div>
-
-
             </div>
-        </div>
-        <!-- 3rd -->
-        <div id="all-jobs" class="mb-10 grid grid-cols-1 gap-5">
-            <div id="job-description"
-                class="job-card lg:w-[1110px] md:w-[1110px] sm:w-[750px] h-[280px]  relative p-2.5 bg-white rounded-lg border border-amber-200">
+
+             <div
+                class="job-card lg:w-[1110px] md:w-[1110px] sm:w-[750px] h-[280px]  relative p-2.5 bg-white rounded-lg border border-amber-200 " data-status="not-applied">
 
                 <button class="trash-btn absolute right-3 top-3"><i class="fa-regular fa-trash-can "></i></button>
 
@@ -146,20 +138,22 @@
                     </ul>
                 </div>
 
-                <button class="btn mt-5 w-[120px] h-10 bg-[#EEF4FF]">Not Applied</button>
+                <button class="status-btn btn mt-5 w-[120px] h-10 bg-[#EEF4FF]">Not Applied</button>
                 <p class=" mt-2 text-[14px] text-[#323B49] text-wrap">Build cross-platform mobile applications using
                     React Native.
                     Work on products used by millions of users worldwide.</p>
 
                 <!-- two Buttons -->
                 <div class=" mt-5 flex gap-5 items-center">
-                    <button class="btn btn-outline btn-secondary w-[100px] h-9">INTERVIEW</button>
-                    <button class="btn btn-outline btn-accent w-[100px] h-9">REJECTED</button>
+                    <button class="interview-btn btn btn-accent w-[100px] h-9">INTERVIEW</button>
+                    <button class="rejected-btn btn btn-secondary w-[100px] h-9">REJECTED</button>
                 </div>
-
-
             </div>
+
+            
+
         </div>
+
 
         <!-- No jobs page -->
         <div id="no-jobs-page" class="w-full max-w-[1160px] mx-auto mb-10 grid grid-cols-1 gap-5 hidden">
@@ -171,7 +165,6 @@
                 <h5 class="text-[16px] leading-5 text-[#64748B] mt-5">Check back soon for new job opportunities</h5>
             </div>
 
-        </div>
 
     </section>
 
