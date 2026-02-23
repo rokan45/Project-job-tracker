@@ -55,6 +55,20 @@ function updateCount() {
 
 }
 
+//update interview count
+function InterviewDisplayNum(){
+    const interviewCount=document.querySelectorAll('.job-card[data-status="interview"]').length;
+
+    const inteviewNum=document.getElementById('total-interview');
+    inteviewNum.innerText=interviewCount;
+}
+//rejected count
+function rejectedCount() {
+    const display = document.getElementById('total-rejected');
+    const count = document.querySelectorAll('.job-card[data-status="rejected"]').length;
+    if(display) display.innerText = count;
+}
+
 // delete and update toatal jobs
 const deleteButton = document.querySelectorAll('.trash-btn');
 deleteButton.forEach(btn => {
@@ -67,3 +81,46 @@ deleteButton.forEach(btn => {
     })
 })
 
+// status button updated
+const allInterviewButton=document.querySelectorAll('.interview-btn');
+
+allInterviewButton.forEach(btn =>{
+    btn.addEventListener('click',function(e){
+        const jobCards=e.currentTarget.closest('.job-card');//child
+        const statusBtn=jobCards.querySelector('.status-btn');
+
+        if(statusBtn){
+            statusBtn.innerText= "Interview";
+            statusBtn.classList.remove('bg-[#EEF4FF');
+            statusBtn.classList.add('bg-green-600','text-white','font-bold');
+
+            //replace it with no jobs
+            const interviewPage=document.getElementById('no-jobs-page');//parent
+            interviewPage.innerHTML=jobCards;
+
+        }
+
+        
+    })
+})
+
+
+
+
+//All rejected work button
+const allrejectedButton=document.querySelectorAll('.rejected-btn');
+
+allrejectedButton.forEach(btn =>{
+    btn.addEventListener('click',function(e){
+        const Parent=e.currentTarget.closest('.job-card');
+
+        const statusBtn=Parent.querySelector('.status-btn');
+        if(statusBtn){
+            statusBtn.innerText= "Rejected";
+            statusBtn.classList.remove('bg-[#EEF4FF');
+            statusBtn.classList.add('bg-red-600','text-white','font-bold');
+        }
+
+        
+    })
+})
