@@ -78,7 +78,7 @@ function handleStatusChange(button, newStatus) {
     updateRejectedCount();
     
     // Auto-refresh the current tab view
-    const activeTab = document.querySelector('.page-btn.bg-blue-600').innerText.toLowerCase();
+   // const activeTab = document.querySelector('.page-btn.bg-blue-600').innerText.toLowerCase();
     // Simulate a click or call showItem to refresh visibility
 }
 

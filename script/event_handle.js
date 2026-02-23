@@ -61,63 +61,29 @@ function rejectedCount() {
     if(display) display.innerText = count;
 }
 
-// delete and update toatal jobs
-const deleteButton = document.querySelectorAll('.trash-btn');
-deleteButton.forEach(btn => {
-    btn.addEventListener('click', function (e) {
-        const cardItem = e.currentTarget.closest('.job-card');
-        cardItem.remove();
 
-        //recount once again
+document.addEventListener('click', (e) => {
+    // Delete Logic
+    if (e.target.closest('.trash-btn')) {
+        e.target.closest('.job-card').remove();
         updateTotalCount();
-    })
-})
+        updateInterviewCount();
+        updateRejectedCount();
+    }
 
-// status button updated
-// const allInterviewButton=document.querySelectorAll('.interview-btn');
+    // Interview Click
+    if (e.target.classList.contains('interview-btn')) {
+        handleStatusChange(e.target, 'interview');
+    }
 
-// allInterviewButton.forEach(btn =>{
-//     btn.addEventListener('click',function(e){
-//         const jobCards=e.currentTarget.closest('.job-card');//child
-//         const statusBtn=jobCards.querySelector('.status-btn');
-
-//         if(statusBtn){
-//             statusBtn.innerText= "Interview";
-//             statusBtn.classList.remove('bg-[#EEF4FF');
-//             statusBtn.classList.add('bg-green-600','text-white','font-bold');
-
-//             //replace it with no jobs
-//             const interviewPage=document.getElementById('no-jobs-page');//parent
-//             interviewPage.innerHTML=jobCards;
-
-//         }
-
-        
-//     })
-// })
+    // Rejected Click
+    if (e.target.classList.contains('rejected-btn')) {
+        handleStatusChange(e.target, 'rejected');
+    }
+});
 
 
 
-
-//All rejected work button
-// const allrejectedButton=document.querySelectorAll('.rejected-btn');
-
-// allrejectedButton.forEach(btn =>{
-//     btn.addEventListener('click',function(e){
-//         const Parent=e.currentTarget.closest('.job-card');
-
-//         const statusBtn=Parent.querySelector('.status-btn');
-//         if(statusBtn){
-//             statusBtn.innerText= "Rejected";
-//             statusBtn.classList.remove('bg-[#EEF4FF');
-//             statusBtn.classList.add('bg-red-600','text-white','font-bold');
-//         }
-
-        
-//     })
-// })
-
-// 3. Handle Status Changes (Interview/Rejected)
 function handleStatusChange(button, newStatus) {
     const card = button.closest('.job-card');
     const statusLabel = card.querySelector('.status-btn');
@@ -133,7 +99,6 @@ function handleStatusChange(button, newStatus) {
         statusLabel.className = "status-btn btn mt-5 w-[120px] h-10 bg-red-600 text-white font-bold border-none";
     }
 
-    // Refresh all counts
     interviewCount();
     rejectedCount();
 }
