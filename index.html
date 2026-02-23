@@ -55,17 +55,17 @@
 
         <!-- job status button section -->
         <div class="gap-2 mt-6 mb-5">
-            <button class="btn btn-outline btn-primary text-[#64748B] w-20 h-8 shadow-md bg-white ">All</button>
+            <button onclick="showItem('all-jobs')" class="btn btn-outline btn-primary text-[#64748B] w-20 h-8 shadow-md bg-white ">All</button>
 
-            <button class="btn btn-outline btn-primary w-20 h-8 text-[#64748B] shadow-md bg-white">Interview</button>
+            <button onclick="showItem('no-jobs-page')" class="btn btn-outline btn-primary w-20 h-8 text-[#64748B] shadow-md bg-white">Interview</button>
 
-            <button class="btn btn-outline btn-primary w-20 h-8 text-[#64748B]  shadow-md bg-white">Rejected</button>
+            <button onclick="showItem('no-jobs-page')" class="btn btn-outline btn-primary w-20 h-8 text-[#64748B]  shadow-md bg-white">Rejected</button>
 
         </div>
 
         <!-- Job description Section -->
-        <div class="mb-10">
-            <div class="w-[1110px] h-[280px] relative p-2.5 bg-white rounded-lg border border-amber-200">
+        <div id="all-jobs" class="mb-10">
+            <div class="lg:w-[1110px] md:w-[1110px] sm:w-[750px] h-[280px]  relative p-2.5 bg-white rounded-lg border border-amber-200">
 
                 <button class="absolute right-3 top-3"><i class="fa-regular fa-trash-can "></i></button>
                 <h1 class="text-[18px] font-semibold leading-6 text-[#002C5C]">Mobile First Corp</h1>
@@ -79,7 +79,7 @@
                 </div>
 
                 <button class="btn mt-5 w-[120px] h-10 bg-[#EEF4FF]">Not Applied</button>
-                <p class=" mt-2 text-[14px] text-[#323B49]">Build cross-platform mobile applications using React Native.
+                <p class=" mt-2 text-[14px] text-[#323B49] text-wrap">Build cross-platform mobile applications using React Native.
                     Work on products used by millions of users worldwide.</p>
 
                 <!-- two Buttons -->
@@ -93,16 +93,17 @@
         </div>
 
         <!-- No jobs page -->
-        <div
-            class="w-full max-w-[1160px] mx-auto h-[400px] mb-10 flex flex-col justify-center items-center rounded-lg shadow-sm bg-white">
+        <div id="no-jobs-page" class="w-full max-w-[1160px] mx-auto h-[400px] mb-10 flex flex-col justify-center items-center rounded-lg shadow-sm bg-white hidden">
             <img src="./images/jobs.png" alt="" height="100px" width="100px">
 
             <h1 class="text-2xl font-semibold leading-5 text-[#002C5C] mt-5">No jobs available</h1>
 
             <h5 class="text-[16px] leading-5 text-[#64748B] mt-5">Check back soon for new job opportunities</h5>
         </div>
+
     </section>
 
+    <script src="./script/event_handle.js"></script>
 </body>
 
 </html>
