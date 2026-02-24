@@ -63,7 +63,7 @@ function showItem(filterType, event) {
     }
 
     // Update the count on available job section
-    const availableJobsSpan = document.querySelector('.available-jobs');
+    const availableJobsSpan = document.getElementById('available-jobs');
     if (availableJobsSpan) {
         availableJobsSpan.innerText = JobCount;
     }
